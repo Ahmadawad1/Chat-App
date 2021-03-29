@@ -1,0 +1,9 @@
+create table Users(
+ID int primary key identity(1,1),[Name] nvarchar(32) ,[Email] nvarchar(64) unique,[Phone] nvarchar(32),[Password] nvarchar(128),[Location] nvarchar(64),[Status] int ,Bio nvarchar(1024),[ProfileImage] nvarchar(128)
+)
+create table Groups(
+ID int primary key identity(1,1),GroupGUID nvarchar(64),[Name] nvarchar(64),GroupImage nvarchar(128),MemberID int
+)
+create table Messages(
+ID int primary key identity(1,1),FromID int , ToID int,Body nvarchar(1024),[Date] nvarchar(64),MessageType int,ImageUrl nvarchar(128),GroupOrSingle int,GroupGUID nvarchar(64)
+)

@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link href="~/CSS/Contacts.css" rel="stylesheet" />
+<script src="~/JS/Contacts.js"></script>
+<h2 id="Header">Contacts</h2>
+<hr />
+
+<div id="SearchDiv">
+    <span id="SearchIcon" class="fa fa-search"></span><input onkeyup="Search(this.value,@ViewBag.MyID)" type="search" id="Search" placeholder="Search Names" />
+  <br /> 
+    <ul id="SearchResult">
+
+    </ul>
+</div>
+<hr />
+
+<ul id="RandomContactsList">
+    @foreach (var contact in ViewBag.RandomContacts)
+    {
+        <li id="RandomContactsItem" onclick="ViewConversation(@contact.ID,@ViewBag.MyID)">
+            <img id="RandomImage" src="@Url.Content(contact.ProfileImage)" /><br />
+            <label id="RandomName">@contact.Name</label>
+        </li>
+    }
+
+</ul>
+<h4 style="margin-left:13px;color:white">Recent</h4>
+
+<ul id="ContactsList">
+
+    @if (ViewBag.ContactList == null || ViewBag.ContactList.Count == 0)
+    {
+        <h8 style="margin-left:23px;color:white">No Contacts</h8>
+    }
+    else
+    {
+        foreach (var contact in ViewBag.ContactList)
+        {
+
+            if (contact != null)
+            {
+                <li id="ContactsItem" onclick="ViewConversation(@contact.ID,@ViewBag.MyID)">
+                    <div id="ContactsImageDiv">
+                        <img id="ContactsImage" src="@Url.Content(contact.ProfileImage)" />
+                    </div>
+                    <div id="NameAndMsg">
+                        <label id="ContactsName">@contact.Name</label><br />
+                        @foreach (var i in ViewBag.LastMessages)
+                        {
+                            if (contact.ID == i.ID)
+                            {
+                                <label id="LastMsgName">@i.Msg</label>
+                            }
+
+                        }
+                    </div>
+                    <div id="LastMsgDateDiv">
+                        @foreach (var i in ViewBag.LastMessages)
+                        {
+                            if (contact.ID == i.ID)
+                            {
+                                <label id="LastMsgDate">@i.Date</label>
+                            }
+
+                        }
+
+                    </div>
+                </li>
+            }
+            else
+            {
+               
+            }
+        }
+    }
+</ul>
+

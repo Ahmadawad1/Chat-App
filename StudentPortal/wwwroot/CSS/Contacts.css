@@ -1,0 +1,197 @@
+﻿#Header {
+    font-family: "Public Sans",sans-serif;
+    color: white;
+    margin: 5%;
+}
+#SearchDiv{
+    width:100%;
+   display:inline-flex;
+}
+#SearchIcon {
+    background-color: #36404a;
+    padding: 5px;
+    font-size: 35px;
+    border: hidden;
+    color: #535d67;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    margin-left: 6%;
+    cursor: pointer;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius:5px;
+}
+::-webkit-scrollbar-track {
+    background: #36404a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    #SearchTxt{
+        font-size:20px;
+    }
+#SearchTxt2 {
+    font-size: 20px;
+    color:#e46f6f;
+    margin-left:50px;
+}
+#SearchResult {
+    width: 26%;
+    height: 82%;
+    margin-top: 35px;
+    list-style-type: none;
+    background-color: #323a42;
+    border-radius: 3px;
+    color: #abb4d2;
+    padding: 0;
+    position: absolute;
+    display: none;
+}
+#SearchItem{
+    width:100%;
+    margin:0;
+    padding:20px;
+    font-family:Arial;
+
+}
+#Search {
+    width: 80%;
+    padding: 5px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #36404a;
+    border: hidden;
+    outline: none;
+    color: #abb4d2;
+}
+
+#ContactsList {
+   overflow-y:scroll;
+   max-height:400px;
+    list-style-type: none;
+    padding: 0;
+  
+}
+#ContactsImageDiv {
+    width: 25%;
+    transition: 0.5s ease;
+    padding: 10px;
+}
+#NameAndMsg {
+    display: block;
+    color: white;
+    width: 65%;
+    transition: 0.5s ease;
+    padding: 10px;
+}
+#ContactsName {
+    font-size: 20px;
+    font-family: "Public Sans",sans-serif;
+    color: #abb4d2;
+}
+#LastMsgName {
+    font-size: 12px;
+    color: #4c535b;
+    font-family: "Public Sans",sans-serif;
+}
+#LastMsgDate {
+    color: #abb4d2;
+  
+}
+#LastMsgDateDiv {
+    width: 14%;
+    transition: 0.5s ease;
+    padding:10px;
+}
+#ContactsImage {
+    height: 50px;
+    width:60px;
+    margin-left:10px;
+    border-radius: 100%;
+}
+#ContactsItem:hover #ContactsImageDiv{
+    background-color:#323a42;
+}
+#ContactsItem:hover #NameAndMsg {
+    background-color: #323a42;
+}
+#ContactsItem:hover #LastMsgDateDiv {
+    background-color: #323a42;
+}
+#ContactsItem {
+    transition:0.5s ease;
+    width: 100%;
+    margin:0;
+    padding: 0;
+    display: inline-flex;
+    overflow-x: hidden;
+    border-bottom: 1px solid #4e565e;
+}
+
+#RandomContactsList {
+  
+    display: inline-flex;
+    list-style-type: none;
+   padding:0;
+ 
+}
+#RandomContactsItem {
+    width: 25%;
+    padding: 10px;
+  transition:0.5s ease;
+    word-wrap: break-word;
+    overflow-x:hidden;
+}
+    #RandomContactsItem:hover{
+        background-color:#2c3238
+    }
+    #RandomImage {
+        height: 50px;
+        width: 90%;
+        border-radius: 100%;
+    }
+#RandomName {
+    color: #abb4d2;
+    font-size: 15px;
+    font-family: Arial;
+    margin-top: 7px;
+    margin-left: 10%;
+}
+
+@media screen and (max-width:980px) {
+
+    #Header {
+        font-size: 25px;
+    }
+
+}
+@media screen and (max-width:730px) {
+    #ContactsImage {
+        height: 50px;
+        width: 40px;
+        margin-left: 10px;
+        border-radius: 100%;
+    }
+    #ContactsName {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:450px) {
+#ContactsImage
+{
+    height: 70px;
+    width: 60px;
+   
+}
+
+#ContactsName {
+    font-size: 20px;
+}
+}

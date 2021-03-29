@@ -1,0 +1,121 @@
+﻿#Header {
+    font-family: "Public Sans",sans-serif;
+    color:white;
+    margin:5%;
+}
+
+#ProfileInfo {
+    width: 100%;
+    padding: 20px;
+   margin-left:10%;
+}
+#bio {
+    font-size: 15px;
+   
+    width: 100%;
+    padding: 5px;
+    color: #abb4d2;
+    display: inline-flex;
+    margin-top: 25px;
+    margin-left: -10px;
+    font-family: "Public Sans",sans-serif;
+}
+#ProfileImageDiv{
+    display:inline-flex;
+    flex-direction:row;
+    
+}
+#EditButton {
+    width: 80%;
+    color:white;
+    border:1px black solid;
+   margin-top:50px;
+    padding:10px;
+   transition: 0.5s ease;
+    background-color: #262e37;
+    border-radius:5px;
+    text-decoration:none;
+    text-align:center
+}
+#EditButton:hover{
+    background-color:#464f58
+}
+#PersonalInfo {
+    width: 100%;
+    color: white;
+    font-family: "Public Sans",sans-serif;
+}
+#PersonalInfoList {
+    width: 100%;
+    list-style-type: none;
+}
+#PersonalInfoListRow {
+    width: 100%;
+    list-style-type: none;
+    border-bottom: 1px #5c6065 solid;
+    color: white;
+    font-family: "Public Sans",sans-serif;
+    display:none;
+}
+#PersonalInfoListItem {
+    width: 100%;
+    display: inline-flex;
+    font-size: 17px;
+    margin: 0;
+    font-family: "Public Sans",sans-serif;
+    padding: 0;
+    color: #abb4d2;
+}
+
+#ProfileImage {
+    height: 100px;
+    width: 60%;
+    border-radius: 100%;
+    cursor:pointer;
+    transition:0.4s ease;
+}
+#ProfileImage:hover{
+    opacity:0.6;
+}
+#InfoDiv {
+    color: white;
+    
+    font-family: "Public Sans",sans-serif;
+}
+#Name{
+    font-size:33px;
+    margin-left:2%;
+}
+#Status{
+    margin-left:20%;
+}
+@media screen and (max-width:1190px) {
+   
+    #PersonalInfoListItem {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:980px) {
+   
+    #Header {
+      font-size:25px;
+    }
+    #PersonalInfoListItem {
+        font-size: 17px;
+    }
+   
+}
+@media screen and (max-width:900px){
+    #ProfileInfo,#Header{
+        display:none !important;
+    }
+    #PersonalInfoListRow{
+        display:block !important
+    }
+}
+@media screen and (max-width:560px) {
+   
+    #PersonalInfoListRow {
+        padding:10px !important
+    }
+}

@@ -1,0 +1,100 @@
+﻿@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<script src="~/JS/Groups.js"></script>
+<link href="~/CSS/Groups.css" rel="stylesheet" />
+
+<h2 id="Header">Groups</h2>
+<hr />
+
+<div id="SearchDiv">
+    <span id="SearchIcon"  class="fa fa-search"></span>
+    <input type="search" id="Search" onkeyup="Search(this.value,@ViewBag.MyID,'Search')" placeholder="Search Groups" />
+    <span data-toggle="modal" data-target="#GroupModal" class="fa fa-plus" id="AddGroup"></span>
+    <br />
+    <ul id="SearchResult">
+    </ul>
+</div>
+<hr />
+<ul id="ContactsList">
+    @if (ViewBag.GroupsList.Count == 0)
+    {
+        <h8 style="margin-left:23px;color:white">No Groups</h8>
+    }
+    else
+    {
+        foreach(var group in ViewBag.GroupsList)
+        {
+    <li id="ContactsItem" onclick="ViewConversation('@group.GroupGUID',@ViewBag.MyID)">
+        <div id="ContactsImageDiv">
+            <img id="ContactsImage" src="@Url.Content(group.GroupImage)" />
+        </div>
+        <div id="NameAndMsg">
+            <label id="ContactsName">@group.Name</label><br />
+            @foreach (var i in ViewBag.LastMessagesGroups)
+            {
+                if (group.GroupGUID == i.GUID)
+                {
+                    if (i.Msg !=null)
+                    {
+                        <label id="LastMsgName">@i.Msg</label>
+                    }
+                    else
+                    {
+                        <label id="LastMsgName">Start Conversation</label>
+                    }
+                }
+
+
+            }
+        </div>
+        <div id="LastMsgDateDiv">
+            @foreach (var i in ViewBag.LastMessagesGroups)
+            {
+                if (group.GroupGUID == i.GUID)
+                {
+                    if (i.Date != "00:00")
+                    {
+                        <label id="LastMsgDate">@i.Date</label>}
+                    else
+                    {
+                        <label id="LastMsgDate">~</label>
+                }
+            }
+
+            }
+        </div>
+    </li>
+    }
+    }
+</ul>
+
+
+    <div class="modal fade" id="GroupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add New Group</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control" id="GroupName" type="text" placeholder="Group Name" /><br />
+                    <span class="fa fa-search" style="font-size:20px;margin-top:10px;margin-left:87%;cursor:pointer;position:absolute"></span> <input onkeyup="Search(this.value,@ViewBag.MyID,'AddSearch')" id="SearchMember" type="text" class="form-control" placeholder="Search Members" />
+                   
+                    <ul id="SearchResultGroup">
+                    </ul><br />
+                    <ul id="ChosenMembers">
+
+                    </ul><br />
+                    <label class="text-danger" id="GroupError"></label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="Dismiss" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                    <button type="button"  onclick="AddGroup(@ViewBag.MyID)" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>

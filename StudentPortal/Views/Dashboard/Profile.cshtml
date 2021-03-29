@@ -1,0 +1,56 @@
+﻿@model DAL.Users
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+    <script src="~/JS/Profile.js"></script>
+<link href="~/CSS/Profile.css" rel="stylesheet" />
+<h2 id="Header">Personal Profile</h2>
+<hr />
+<div id="ProfileInfo">
+
+    <div id="ProfileImageDiv"> <img id="ProfileImage" data-toggle="modal"  data-target="#ImageModal" src="@Url.Content(Model.ProfileImage)" /> </div>
+    <br />
+    <div id="InfoDiv">
+        <label id="Name">@Model.Name </label><br />
+        @{
+            if (Model.Status == 0)
+            {
+                <label id="Status">Active</label><span class="fa fa-circle" style="color:green;font-size:10px;margin-left:5px;"></span>
+            }
+            else if (Model.Status == 1)
+            {
+                <label id="Status">Unavailable</label><span class="fa fa-circle" style="color:darkorange;font-size:10px;margin-left:5px;"></span>
+            }
+        }
+
+    </div>
+</div>
+
+<div id="PersonalInfo">
+    <ul id="PersonalInfoList">
+        <li id="PersonalInfoListItem">
+
+            <label id="bio">
+                " @Model.Bio "
+            </label>
+
+
+
+        </li>
+        <li id="PersonalInfoListItem">
+
+            <span class="fa fa-envelope"></span>&nbsp;&nbsp;&nbsp;<bold>@Model.Email</bold>
+        </li>
+        <li id="PersonalInfoListItem">
+            <span class="fa fa-map-marker-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;<bold>@Model.Location</bold>
+        </li>
+        <li id="PersonalInfoListItem">
+            <span class="fa fa-phone"></span>&nbsp;&nbsp;&nbsp;<bold>@Model.Phone</bold>
+        </li>
+
+        <li id="PersonalInfoListItem">
+            <a id="EditButton" href="@Url.Action("Settings","Dashboard",new { id=Model.ID})">Edit Personal Info</a>
+        </li>
+    </ul>
+</div>

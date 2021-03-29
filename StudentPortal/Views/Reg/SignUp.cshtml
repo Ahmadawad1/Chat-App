@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+    <title>SignUp</title>
+    <script src="~/Libraries/jquery/dist/jquery.js"></script>
+    <link href="~/Libraries/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/CSS/SignUp.css" rel="stylesheet" />
+    <script src="~/JS/SignUp.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="~/Libraries/bootstrap/dist/js/bootstrap.js"></script>
+
+</head>
+<body style="background-color: #36404a">
+    <div id="bgImg"></div>
+    <span id="abchat"><img src="~/Images/chat.png" width="50" height="50" />&nbsp;&nbsp;<label>ABChat</label></span>
+    <div id="container">
+
+
+        @using (Html.BeginForm("SignUp", "Reg", FormMethod.Post, new { @id = "form" }))
+        {
+
+            <h2 style="color:white;margin-left:-60%;font-family:'Public Sans',sans-serif;">SignUp</h2>
+            <br />
+
+            <div id="IconPlusText"> <span id="icon"><img src="~/Images/male.png" width="20" height="20" /></span><div id="TextDiv" style="flex-direction:column;display:inline-flex;"><input autocomplete="off" id="fullname" name="fullname" placeholder=" Username" type="text" /><label id="nameLabel"></label></div></div>
+            <br /><br /><br />
+            <div id="IconPlusText"> <div id="icon"><img src="~/Images/mail.png" width="20" height="20" /></div> <div id="TextDiv" style="flex-direction:column;display:inline-flex;"><input autocomplete="off" name="email" placeholder=" Email" id="email" type="email" /><label id="emailLabel">@ViewBag.Error</label></div></div>
+
+            <br /> <label style="color:#ef476f;font-weight:bolder">@ViewBag.Remote</label>
+            <br /><br />
+            <div id="IconPlusText"> <div id="icon"><img src="~/Images/lock.png" width="20" height="20" /></div><div id="TextDiv" style="flex-direction:column;display:inline-flex;"> <input type="password" id="password" name="password" placeholder=" Password" /> <label id="passwordLabel"></label></div></div>
+            <br /><br /> <br /> <div id="IconPlusText">
+                <div id="icon"><img src="~/Images/lock.png" width="20" height="20" /></div><div id="TextDiv" style="flex-direction:column;display:inline-flex;">
+                    <input type="password" name="confirm" placeholder=" Confirm Password" id="confirm" /> <label id="confirmLabel"></label>
+                </div>
+            </div>
+           <br /><br />
+            <button id="button" type="button">SignUp</button> <br /><br />
+            <p style="font-size:15px;color:white">Already have account?<a href="~/Reg/SignIn" style="color:#b6b6b6;text-decoration:none"> SignIn</a></p>
+        }
+
+
+    </div>
+</body>
+</html>

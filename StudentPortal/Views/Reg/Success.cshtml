@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Success</title>
+
+
+    <link href="~/CSS/Success.css" rel="stylesheet" />
+    <link href="~/Libraries/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div  id="bgImg" ></div>
+    <div id="container" >
+
+
+        @using (Html.BeginForm("SignIn", "Reg", FormMethod.Post, new { @id = "form" }))
+        {
+            <img src="~/Images/tick.png" height="100" width="120" /><br /><br />
+            <h2 style="color:green;font-family:Arial">Account Was Created Successfullty !</h2>
+            <br />
+            <button class="btn btn-success">Go to SignIn</button>
+        }
+
+
+    </div>
+</body>
+</html>

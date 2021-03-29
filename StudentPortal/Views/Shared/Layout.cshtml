@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+    <title>Dashboard</title>
+
+    <script src="~/Libraries/jquery/dist/jquery.js"></script>
+    <script src="~/JS/Profile.js"></script>
+    <link href="~/Libraries/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/CSS/Layout.css" rel="stylesheet" />
+
+    <link href="~/font-awesome/css/all.css" rel="stylesheet" />
+    <script src="~/font-awesome/js/all.js"></script>
+    <script src="~/JS/Groups.js"></script>
+    <link href="~/CSS/Groups.css" rel="stylesheet" />
+    <link href="~/CSS/Profile.css" rel="stylesheet" />
+
+    <script src="~/Libraries/microsoft/signalr/dist/webworker/signalr.js"></script>
+    <link href="~/font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="~/JS/Layout.js"></script>
+    <script src="~/Libraries/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div id="MainDiv">
+
+        <div id="IconsDiv">
+            <ul id="IconsList">
+                <li id="LogoItem" onclick="Lunch()">
+                    <img id="LogoImg" src="~/Images/chat.png" />
+                    <br />
+                    <label id="LogoTxt">ABChat</label>
+                </li>
+
+                <li id="FirstListItem">
+                    <a href="@Url.Action("Profile","Dashboard",new { id= ViewBag.UserInfo.ID})">
+                        <span id="Icon" class="fa fa-user"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Contacts","Dashboard",new { id=ViewBag.UserInfo.ID})">
+                        <span id="Icon" class="fa fa-comments"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Groups","Dashboard",new { id=ViewBag.UserInfo.ID})">
+                        <span id="Icon" class="fa fa-users"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Settings","Dashboard",new { id=ViewBag.UserInfo.ID})">
+                        <span id="Icon" class="fa fa-cog"></span>
+                    </a>
+                </li>
+                <li id="LastListItem">
+                    <a href="@Url.Action("SignOut","Dashboard",new { id=ViewBag.UserInfo.ID})">
+                        <span id="SignOutIcon" class="fa fa-sign-out-alt"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="ChildViewDiv">
+            <input type="hidden" id="MsgType" value="" />
+            <div id="HeaderInfo">
+                <div id="ImageHeaderDiv"> <img id="MenuImg" data-toggle="modal" data-target="#ImageModal" src="@Url.Content(ViewBag.UserInfo.ProfileImage)" /> </div>&nbsp;&nbsp;&nbsp;
+                <div id="InfoHeaderDiv">
+                    <label id="HeaderName">@ViewBag.UserInfo.Name</label><br />
+                    @{
+                        if (ViewBag.UserInfo.Status == 0)
+                        {
+                            <label id="Status">Active</label><span class="fa fa-circle" style="color:green;font-size:10px;margin-left:5px;"></span>
+                        }
+                        else if (ViewBag.UserInfo.Status == 1)
+                        {
+                            <label id="Status">Unavailable</label><span class="fa fa-circle" style="color:darkorange;font-size:10px;margin-left:5px;"></span>
+                        }
+                    }
+                </div><br />
+
+            </div>
+
+
+
+            @RenderBody()
+
+
+
+        </div>
+
+        <div id="LunchDiv">
+            <span class="fa fa-comments" style="width:300px;height:300px;color:white;margin-top:10%;margin-left:50px"></span><br />
+            <p id="Explaination">ABChat is a chat app with to you to communicate with friends and family to enhance your social netwok</p>
+            <br />
+            <button id="Feedback" data-toggle="modal" data-target="#FBModal" type="button">Feedback</button>
+            <button id="ContactUs" data-toggle="modal" data-target="#ContactUSModal" type="button">Contact Us</button>
+        </div>
+
+        <div id="ChatDiv">
+            <div id="CurrentChatHeader">
+                <img src="" id="CurrentChatImage" /> <label id="CurrentChatName"></label>
+                <span class="fa fa-circle" id="StatueCircle" style="font-size:10px;margin-left:5px;"></span>
+                <input type="file" onchange="FillTxt()" style="visibility:hidden" id="FileInput" />
+                <span class="fa fa-info-circle" onclick="ShowContactInfo()" name="info" style="margin-left:25%" id="ChatUserIcon"></span>
+                <span class="fa fa-video-slash" id="ChatUserIcon"></span>
+                <span class="fa fa-phone" id="ChatUserIcon"></span>
+            </div>
+            <div id="ChatArea">
+                <ul id="MessagesList">
+
+                    <li id="BeginChat"></li>
+
+                </ul>
+            </div>
+            <div id="CurrentChatFooter">
+                <input type="hidden" id="myID" value="@ViewBag.MyID" />
+                <input type="hidden" id="ContactID" value="" />
+                <input id="InsertionField" type="text" placeholder="Write a Message..." autocomplete="off" />
+
+
+                <span class="fa fa-image" onclick="TriggerInput()" id="InsertImage"></span>
+                <button id="SendBtn"><span style="color:white;" class="fa fa-paper-plane"></span></button>
+            </div>
+        </div>
+        <div id="DDLUserInfo">
+            <a id="DDLUserItemFirst" href="#">
+                <img src="" height="70" id="CurrentChatImage2" style="border-radius:100%;" width="70" /><br /><br />
+                <label id="CurrentChatName2"></label>
+                <br />
+
+                <label id="Statue2" style=" color: #abb4d2;"></label> <span id="StatueCircle2" class="fa fa-circle" style="font-size:10px;margin-left:5px;"></span>
+                <br />
+                <span id="AddMember" data-target="#MemberModal" data-toggle="modal"><span class="fa fa-plus-circle"></span><label style="margin-left:5px;cursor:pointer">Add Member</label></span>
+            </a>
+            <a id="DDLUserItem" href="#">
+                @*  <span class="fa fa-pen" style="font-size:15px;"></span>*@
+                <label id="CurrentChatBio" style=" color: #abb4d2;"></label>
+            </a>
+            <a id="DDLUserItem" name='hide' href="#">
+                <span class="fa fa-map-marker-alt" id="LocationIcon" style="font-size:15px;"></span>&nbsp;&nbsp;
+                <label style=" color: #abb4d2;" id="CurrentChatLocation"></label>
+            </a>
+            <ul id="GroupMembers">
+            </ul>
+
+            <a id="DDLChatItem" href="#" style=" border-top: 1px solid #7269ef;"> <span class="fa fa-volume-mute IconsChat"></span>&nbsp;&nbsp;<label id="UserSettings">Mute</label></a>
+            <a id="DDLChatItem" href="#"> <span class="fa fa-flag IconsChat"></span>&nbsp;&nbsp;<label id="UserSettings">Report</label></a>
+            <a id="DDLChatItem" name="BlockLink" href="#">  <span class="fa fa-trash IconsChat"></span>&nbsp;&nbsp;<label id="UserSettings">Block</label></a>
+            <br />   <label id="DeleteLink" class="text-danger" style="border-bottom:solid red 1px;display:none;margin-left:110px;cursor:pointer">Delete Group</label>
+        </div>
+    </div>
+</body>
+</html>
+@using (Html.BeginForm("ChangeImage", "Dashboard", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "ChangeImage" }))
+{
+    <div class="modal fade" id="ImageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Change Profile Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="id" value="@Model.ID" />
+                    <input type="file" id="uploaded" name="image" readonly />
+                    <br />
+                    <label id="ImageError" class="text-danger font-weight-bolder"></label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hide</button>
+                    <button type="button" id="ChangeImageButton" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@using (Html.BeginForm("ChangeGroupImage", "Dashboard", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="modal fade" id="GroupImageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Change Group Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="GroupImageGuid" name="guid" value="" />   
+                    <input type="hidden" name="myID" value="@ViewBag.MyID" />
+                    <input type="file" id="uploadedImage" name="image" readonly />
+                    <br />
+                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hide</button>
+                    <button type="submit" id="" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="modal fade" id="MemberModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Member</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <span class="fa fa-search" style="font-size:20px;margin-top:10px;margin-left:87%;cursor:pointer;position:absolute"></span> <input onkeyup="Search(this.value,@ViewBag.MyID,'NewSearch')" id="SearchNewMember" type="text" class="form-control" placeholder="Search Members" />
+                <input type="hidden" id="GroupGUID" />
+                <ul id="SearchNewResultGroup">
+                </ul><br />
+                <ul id="ChosenNewMembers">
+                </ul><br />
+                <label class="text-danger" id="GroupError2"></label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="Dismiss2" data-dismiss="modal">Dismiss</button>
+                <button type="button" onclick="AddMember(@ViewBag.MyID)" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ContactUSModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Contact Us</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img class="ImageSocial" src="~/Images/linkedin.png" /> <img class="ImageSocial" src="~/Images/facebook.png" /> <img class="ImageSocial" src="~/Images/google.png" /> <img class="ImageSocial" src="~/Images/instagram.png" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="FBModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Feedback</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" placeholder="Write Feedback" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button> <button type="button" class="btn btn-primary">Send</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm("DeleteMember", "Dashboard", FormMethod.Post, new { }))
+{
+    <div class="modal fade" id="DeleteMemberModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" name="DeleteNameHeader">Delete Member</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="memberGUID" value="" id="MemberIDToDeleteGuid" />
+                    <input type="hidden" name="memberID" value="" id="MemberIDToDelete" />
+                    <input type="hidden" name="myID" value="@ViewBag.MyID" />
+                    <h6>Are You Sure ?</h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Keep Him</button> <button type="submit" class="btn btn-danger">Delete</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

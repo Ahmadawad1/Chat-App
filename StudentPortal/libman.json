@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "font-awesome@5.15.2",
+      "destination": "wwwroot/font-awesome/"
+    },
+    {
+      "library": "jquery-ajaxy@1.6.1",
+      "destination": "wwwroot/Libraries/jquery/jquery-ajaxy/"
+    },
+    {
+      "library": "signalr.js@2.4.1",
+      "destination": "wwwroot/Libraries/jquery/signalr.js/"
+    },
+    {
+      "library": "aspnet-signalr@1.0.26",
+      "destination": "wwwroot/Libraries/jquery/aspnet-signalr/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "@microsoft/signalr@5.0.4",
+      "destination": "wwwroot/Libraries/microsoft/signalr/"
+    }
+  ]
+}

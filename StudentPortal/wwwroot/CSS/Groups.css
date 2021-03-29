@@ -1,0 +1,219 @@
+﻿#Header {
+    font-family: "Public Sans",sans-serif;
+    color: white;
+    margin: 5%;
+}
+#SearchResultGroup {
+    width:100%;
+    list-style-type:none;
+    padding:0;
+
+
+}
+#SearchNewResultGroup {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+}
+#ChosenMembers{
+    color:black;
+    list-style-type:none;
+    padding:0;
+
+}
+#ChosenNewMembers {
+    color: black;
+    list-style-type: none;
+    padding: 0;
+}
+#X{
+    font-size:14px;
+    margin-top:2px;
+   color:white;
+}
+#ChosenName {
+    font-family: Arial;
+    font-size: 13px;
+    margin-left: 5px;
+    color: white;
+}
+.ChosenMember {
+    padding: 2px 5px 2px 5px;
+  background-color:#7785b2;
+    display: inline-flex;
+    border: hidden;
+    border-radius: 15px;
+    margin-right:5px;
+    margin-top:2px;
+    width: auto;max-height:25px;
+}
+    .ChosenMember:hover {
+        background-color: #5c6a96;
+    }
+    #SearchResultGroup li {
+        padding: 0;
+        cursor: pointer;
+        transition: 0.5s ease;
+        color: white;
+        border-bottom: 1px solid #40464d;
+        background-color: #323a42;
+    }
+        #SearchResultGroup li:hover{
+            background-color:#7785b2;
+        }
+#SearchNewResultGroup li {
+    padding: 0;
+    cursor: pointer;
+    transition: 0.5s ease;
+    color: white;
+    border-bottom: 1px solid #40464d;
+    background-color: #323a42;
+}
+
+    #SearchNewResultGroup li:hover {
+        background-color: #7785b2;
+    }
+        #SearchDiv {
+            width: 100%;
+            display: inline-flex;
+        }
+
+#AddGroup {
+    font-size: 25px;
+    color: #abb4d2;
+    margin-left: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+    transition:0.5s ease;
+
+}
+#AddGroup:hover{
+    color:#8d98bd
+}
+#SearchIcon {
+    background-color: #36404a;
+    padding: 5px;
+    font-size: 35px;
+    border: hidden;
+    color: #535d67;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    margin-left: 6%;
+    cursor: pointer;
+}
+#ContactsItem:hover #ContactsImageDiv {
+    background-color: #323a42;
+}
+
+#ContactsItem:hover #NameAndMsg {
+    background-color: #323a42;
+}
+
+#ContactsItem:hover #LastMsgDateDiv {
+    background-color: #323a42;
+}
+#SearchResult {
+    width: 26%;
+    height: 82%;
+    margin-top: 35px;
+    list-style-type: none;
+    background-color: #323a42;
+    border-radius: 3px;
+    color: #abb4d2;
+    padding: 0;
+    position: absolute;
+    display: none;
+}
+
+#SearchItem {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial;
+}
+#Search {
+    width: 65%;
+    padding: 5px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #36404a;
+    border: hidden;
+    outline: none;
+    color: white;
+}
+#ContactsList {
+    overflow-y: scroll;
+    max-height: 900px;
+    list-style-type: none;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #36404a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+#ContactsImageDiv {
+    width: 25%;
+    transition: 0.5s ease;
+    padding: 10px;
+}
+
+#NameAndMsg {
+    display: block;
+    color: white;
+    width: 65%;
+    transition: 0.5s ease;
+    padding: 10px;
+}
+
+#ContactsName {
+    font-size: 20px;
+    font-family: "Public Sans",sans-serif;
+    color: #abb4d2;
+}
+
+#LastMsgName {
+    font-size: 12px;
+    color: #4c535b;
+    font-family: "Public Sans",sans-serif;
+}
+
+#LastMsgDate {
+    color: #abb4d2;
+   
+}
+
+#LastMsgDateDiv {
+    width: 14%;
+    transition: 0.5s ease;
+    padding: 10px;
+    
+}
+
+#ContactsImage {
+    height: 50px;
+    width: 60px;
+    margin-left: 10px;
+    border-radius: 100%;
+}
+
+#ContactsItem {
+    width: 100%;
+    padding: 0;
+    display: inline-flex;
+    overflow-x: hidden;
+    border-bottom: 1px solid #4e565e;
+}

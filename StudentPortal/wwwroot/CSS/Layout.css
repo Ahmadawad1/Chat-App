@@ -1,0 +1,606 @@
+﻿#IconsDiv 
+{
+    width: 4%;
+    height: 100%;
+    background-color: #36404a;
+}
+#ChildViewDiv {
+    width: 26%;
+    height: 100%;
+    background-color: #262e35;
+}
+#CurrentChatHeader {
+    background-color: #36404a;
+    width: 100%;
+    height:15%;
+    border-bottom: 1px solid #2a343d;
+    padding: 25px;
+    display:none;
+}
+#DeleteMember {
+  right:0;
+    color: #ef476f;
+    cursor: pointer;
+    float: right;
+    transition: 0.5s ease;
+}
+#DeleteMember:hover{
+    color:#eb859d
+}
+#MembersItem {
+    padding: 20px;
+    display: inline-flex;
+    width: 100%;
+}
+#MemberImage {
+    height: 30px;
+    height: 30px;
+    border-radius:100%;
+ 
+}
+#MembersItem[name='MemberLi']:hover{
+    background-color:#36404a;
+    cursor:auto
+}
+#MemberName {
+    margin-left: 8px;
+    color: #abb4d2;
+    font-size: 17px;
+    width:100%;
+}
+#GroupMembers {
+    width: 100%;
+    display: none;
+    padding: 0;
+
+    overflow-y: auto;
+    list-style-type: none;
+    max-height: 230px;
+}
+
+#MessageToMe {
+    background-color: #7269ef;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 5px;
+}
+#MessageFromMe {
+    background-color: #36404a;
+    padding: 10px;
+    text-align: right;
+    font-size: 17px;
+    border-radius: 5px;
+}
+.ImageSocial{
+    margin-left:30px;
+    height:50px; 
+    height:50px;
+}
+#ContactUs {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin: 20px;
+    background-color: #333232;
+    padding: 5px;
+    border-radius: 3px;
+    border: hidden;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    transition: 0.5s ease;
+    outline:none;
+}
+    #ContactUs:hover {
+        background-color:#404850;
+    }
+#Feedback {
+    bottom: 0;
+    right: 90px;
+    position: absolute;
+    margin: 20px;
+    background-color: #333232;
+    padding: 5px;
+    border-radius: 3px;
+    border: hidden;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    outline: none;
+    transition: 0.5s ease;
+}
+
+    #Feedback:hover {
+        background-color: #404850;
+    }
+    #LogoItem {
+        cursor: pointer;
+        transition: 0.5s ease;
+    }
+#LogoItem:hover { 
+    background-color: #313b45;
+}
+#ChatDiv {
+    width: 70%;
+    height: 100%;
+    display: none;
+    background-color: #464f58;
+    font-family: Arial;
+}
+#LunchDiv {
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    background-image: radial-gradient(farthest-corner at 40px 40px, #36404a 0%, #ef476f 100%);
+    font-family: Arial;
+}
+#Explaination{
+    color:white;
+    width:50%;
+    font-family:Arial;
+    text-align:center;
+    margin-left:30%;
+}
+#ChatArea {
+    height: 73%;
+    max-height:73%;
+   
+    overflow-y: auto;
+  
+}
+#MessagesList{
+list-style-type:none;
+padding:0;
+
+}
+#DDLChatBars {
+    width: 125px;
+    background-color: #36404a;
+    border:1px solid #dcd1d1;
+    position: absolute;
+    padding: 10px;
+    text-align: left;
+    margin-top: 2px;
+    border-radius: 5px;
+    margin-left:16%;
+ display:none
+}
+#DDLUserInfo {
+   width:20%;
+    background-color: #36404a; 
+   height:100%;   
+   border-left:2px #7269ef double;
+    text-align: left; 
+    display: none;
+}
+#FromMe:hover {
+    background-color: #464f58 !important;
+}
+#ToMe:hover {
+    background-color: #464f58 !important;
+}
+#BeginChat:hover {
+    background-color: #464f58 !important;
+}
+#DDLUserItem {
+    padding: 15px;
+    display: block;
+    margin: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+#DDLUserItemFirst {
+    text-align: center;
+    display: block;
+    padding: 10px;
+    margin-top: 60px;
+    color: white;
+    text-decoration: none;
+ 
+}
+#AddMember {
+    color: #abb4d2;
+    font-size: 17px;
+    text-align:left;
+   
+    display:none;
+}
+#DDLChatItem {
+    padding: 10px;
+    color: #cacaca;
+    display: block;
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#DDLChatItem:hover {
+    background-color:#7269ef;
+}
+    .IconsChat {
+        font-size: 20px;
+    }
+#DDLMsgBars {
+    width: 125px;
+    background-color: #36404a;
+    border: hidden;
+    position: absolute;
+    padding: 10px;
+    text-align: left;
+    margin-top: 25px;
+    border-radius: 5px;
+    display: none;
+}
+#DDLMsgBars2{
+    width: 125px;
+    background-color: #36404a;
+    border: hidden;
+    position:absolute;
+    padding: 10px;
+    text-align: left;
+    margin-top: -25px;
+    margin-left:125px;
+    border-radius: 5px;
+    display: none;
+}
+#DDLMsgItem{
+padding:10px;
+color:#cacaca;
+
+display:block;margin:0;
+text-decoration:none;
+}
+#DDLIcons{
+    margin-right:5px;
+}
+
+#MessageImage {
+    margin: 10px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    border: hidden;
+    margin-top: 0;
+  
+}
+#ClockIcon,#Time{
+    color:#b5b1b1;
+    font-size:12px;
+    margin-right:5px;
+}
+#MessageBars {
+    color: #7269ef;
+    margin: 5px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#MessageBars2 {
+    color: #b5b1b1;
+    margin: 5px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#BeginChat {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+#FromMe {
+    display: inline-flex;
+    word-break: break-all;
+    color: white;
+    text-align: right;
+ float:right;
+ 
+    margin-left: 50%;
+    padding: 0;
+    width: 50%;
+}
+
+#ToMe {
+    color:white;  
+    word-break: break-all;
+    width:50%;
+    padding: 0;
+}
+#CurrentChatFooter {
+    width: 100%;
+    background-color: #36404a;
+    border-top: 1px solid #2a343d;
+    padding: 20px;
+    height: 12%;
+  display:none;
+}
+#SendBtn {
+    border-radius: 7px;
+    background-color: #7269ef;
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin-left: 10px;
+    border: hidden;
+    font-size:15px;
+    padding:13px;
+    outline:none;
+}
+#SendBtn:hover {
+  background-color:#5349e7;
+}
+#InsertImage {
+    color: #7269ef;
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.5s ease;
+}
+    #InsertImage:hover {
+        color: #5349e7;
+    }
+#InsertFile {
+    color: #7269ef;
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.5s ease;
+}
+
+    #InsertFile:hover {
+        color: #5349e7;
+    }
+#InsertionField {
+    background-color: #262e35;
+    width: 80%;
+    height: 80%;
+    border: 1px solid #29343e;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    color:white;
+
+}
+
+#ChatBars {
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin-left: 2%;
+    color: #abb4d2;
+    font-size: 20px;
+}
+    #ChatBars:hover{
+        color:#a19f9f
+    }
+    #ChatUserIcon:hover {
+        color: #a19f9f
+    }
+#ChatUserIcon {
+    color: #abb4d2;
+    margin-left: 2%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+#CurrentChatHeader {
+    background-color: #36404a;
+    width: 100%;
+    border-bottom: 1px solid #2a343d;
+    padding: 25px;
+}
+#CurrentChatImage {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#CurrentChatName2 {
+    font-size: 20px;
+    color: white
+}
+#CurrentChatName {
+    color: #abb4d2;
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+}
+    #MainDiv {
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        outline: none;
+        background-color: #36404a;
+    }
+#IconsList {
+    margin: 0;
+    padding:0;
+    width: 100%;
+    left:0;
+    list-style-type: none;
+}
+#FirstListItem{
+margin-top:100px;
+
+}
+#LastListItem {
+    margin-top: 200px;
+}
+#IconsRow {
+    display: none;
+    padding:10px;
+    border-bottom: 1px #5c6065 solid;
+}
+#IconRow {
+    cursor: pointer;
+    width: 80%;
+    color: white;
+    color: #b5b1b1;
+    font-size: 25px;
+}
+#IconRowOut {
+    cursor: pointer;
+    width: 80%;
+    color:#ef476f;
+    font-size: 25px;
+}
+#Icon {
+    color: white;
+    font-size: 25px;
+}
+li:hover #Icon{
+    color:#b5b1b1;   
+}
+
+#SignOutIcon {
+    color: #ef476f;
+    font-size: 25px;
+}
+#LogoTxt {
+    margin-left: -13px;
+    color: #ef476f;
+}
+li {
+    padding: 30%;
+}
+#LogoImg {
+    margin-left: -4px;
+    height:40px;
+    width:36px;
+}
+    li:hover:not(#LogoItem) {
+        background-color: #262e37;
+        cursor: pointer;
+        transition: ease 0.5s;
+    }
+#HeaderName {
+    color: white;
+    width: 100%;
+    font-size: 16px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #36404a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+#Status{
+    color:white;
+    font-size:15px;
+}
+#InfoHeaderDiv {
+    width: 80%;
+    display: block
+}
+#ImageHeaderDiv {
+    width: 20%;
+    display: inline-flex;
+}
+#MenuImg {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+#HeaderInfo {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    font-family: "Public Sans",sans-serif;
+  
+}
+@media screen and (max-width:1440px) {
+   #ChatUserIcon{
+       margin-left:65% !important;
+   }
+}
+@media screen and (max-width:1220px) {
+    #LogoTxt{
+        display:none;
+    }
+    #ChatUserIcon {
+        margin-left: 10% !important;
+    }
+    #LogoImg {
+        width: 30px;
+    }
+}
+@media screen and (max-width:1024px) {
+    #Icon, #SignOutIcon {
+        font-size: 20px;
+    }
+   #InsertionField{
+       width:70% !important;
+   }
+    
+    }
+@media screen and (max-width:900px){
+    #IconsDiv {
+        display: none !important;
+    }
+    #InsertionField {
+        width: 60% !important;
+    }
+    #HeaderInfo {
+        display:inline-flex !important;
+        flex-direction:row;
+    }
+    #PersonalInfo {
+        display:none !important;
+    }
+    #IconsRow{
+        display:inline-flex !important;
+
+    }
+    #ChatDiv {
+        width: 60% !important;
+    }
+    #ChildViewDiv {
+        width: 40% !important;
+    }
+}
+@media screen and (max-width:630px) {
+    #InsertionField {
+        width: 50% !important;
+    }
+}
+    @media screen and (max-width:600px) {
+        #ChildViewDiv {
+            width: 100% !important;
+        }
+
+        #ChatDiv {
+            display: none !important;
+        }
+
+        #HeaderName {
+            font-size: 23px !important;
+            margin-left: 10px;
+        }
+
+        #Status {
+            margin-left: 10px;
+        }
+
+        #MenuImg {
+            height: 70px !important;
+            width: 70px !important;
+        }
+    }
+

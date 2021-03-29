@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+    <title>SignIn</title>
+    <script src="~/Libraries/jquery/dist/jquery.js"></script>
+    <link href="~/Libraries/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/CSS/SignUp.css" rel="stylesheet" />
+    <script src="~/JS/SignIn.js"></script>
+
+    <script src="~/Libraries/bootstrap/dist/js/bootstrap.js"></script>
+
+
+</head>
+<body style="background-color: #36404a">
+    <div id="bgImg" />
+    <span id="abchat"><img src="~/Images/chat.png" width="40" height="40" />&nbsp;&nbsp;<label>ABChat</label></span>
+    <div id="container">
+
+
+        @using (Html.BeginForm("SignIn", "Reg", FormMethod.Post, new { @id = "form" }))
+        {
+
+            <h2 style="color:white;font-family:Arial;margin-left:-60%">SignIn</h2>
+            <br />
+
+
+            <div id="IconPlusText"> <div id="icon"><img src="~/Images/mail.png" width="20" height="20" /></div> <div id="TextDiv" style="flex-direction:column;display:inline-flex;"><input autocomplete="off" name="email" placeholder="Email" id="email" type="email" /> <label id="ErrorEmail"></label></div></div>
+
+            <br />
+            <br /><br />
+            <div id="IconPlusText"> <div id="icon"><img src="~/Images/lock.png" width="20" height="20" /></div><div id="TextDiv" style="flex-direction:column;display:inline-flex;"> <input type="password" id="password" name="password" placeholder="Password" /><label id="ErrorPassword"></label></div></div>
+            <br />
+            <label style="color:#ef476f" id="ServerError">@ViewBag.ErrorMessage</label>
+            <br />
+
+            <br />
+            <button type="button">Confirm</button> <br /><br />
+            <p style="font-size:15px;color:white">Not a Memeber?<a href="~/Reg/SignUp" style="color:#b6b6b6;text-decoration:none"> SignUp</a></p>
+        }
+
+
+    </div>
+</body>
+</html>

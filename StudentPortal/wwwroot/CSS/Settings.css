@@ -1,0 +1,84 @@
+﻿#Header {
+    font-family: "Public Sans",sans-serif;
+    color: white;
+    margin: 5%;
+}
+#IconField {
+    color: white;
+    font-size: 20px;
+    margin-left: 18px;
+}
+#InputField {
+    color: white;
+    font-family: "Public Sans",sans-serif;
+    background-color: #464f58;
+    margin-left:15px;
+    width:90%;
+    outline:none;
+    padding:5px;
+    border:1px black solid;
+    border-radius:3px;
+}
+#DDLStatue {
+    outline: none;
+    margin-left: 20px;
+    background-color: #f9f9f9;
+}
+#ChangePasswordForm {
+    background-color: #29343e
+}
+#LabelField {
+    margin-left: 5px;
+    color: white;
+    font-size: 20px;
+    font-family: "Public Sans",sans-serif;
+}
+#Delete {
+    width: 90%;
+    padding: 5px;
+    outline: none;
+    background-color: #fc2121;
+    color: white;
+    border-radius: 3px;
+    border: 1px #1e961e solid;
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin-left: 15px;
+}
+#Save {
+    width: 90%;
+    padding: 5px;
+    outline: none;
+    background-color: green;
+    color: white;
+    border-radius: 3px;
+    border: 1px #1e961e solid;
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin-left: 15px;
+}
+#ChangePassword {
+    width: 90%;
+    padding:5px;
+    outline:none;
+    background-color: #21262b;
+    color: white;
+    border-radius:3px;
+    border: 1px #586068 solid;
+   transition:0.5s ease;
+   cursor:pointer;
+   margin-left:15px;
+}
+#Save:hover {
+    background-color: #1e961e
+}
+    #ChangePassword:hover {
+        background-color:#3c444c
+    }
+@media screen and (max-width:980px) {
+  
+    #Header {
+        font-size: 25px;
+    }
+
+}

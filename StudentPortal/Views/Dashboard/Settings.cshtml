@@ -1,0 +1,112 @@
+﻿@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<script src="~/JS/Settings.js"></script>
+<link href="~/CSS/Settings.css" rel="stylesheet" />
+<h2 id="Header">Account Settings</h2>
+@using (Html.BeginForm("SaveChanges", "Dashboard", FormMethod.Post))
+{
+    <span id="IconField" class="fa fa-user"></span><label id="LabelField">Username</label>
+
+    <input type="hidden" name="id" value="@ViewBag.UserInfo.ID" />
+    <input type="text" required id="InputField" name="name" value="@ViewBag.UserInfo.Name" />
+    <br />
+
+    <span id="IconField" class="fa fa-envelope"></span><label id="LabelField">Email</label>
+
+    <input type="email" required id="InputField" name="email" value="@ViewBag.UserInfo.Email" />
+    <br />
+
+    <span id="IconField" class="fa fa-phone"></span><label id="LabelField">Phone</label>
+
+    <input type="text" id="InputField" name="phone" placeholder="Optional" value="@ViewBag.UserInfo.Phone" />
+    <br />
+
+    <span id="IconField" class="fa fa-map-marked-alt"></span><label id="LabelField">Location</label>
+
+    <input type="text" id="InputField" name="location" placeholder="Optional" value="@ViewBag.UserInfo.Location" />
+    <br />
+
+    <span id="IconField" class="fa fa-pen"></span><label id="LabelField">Bio</label>
+
+    <input type="text" style="height:50px;" name="bio" id="InputField" placeholder="Optional" value="@ViewBag.UserInfo.Bio" />
+    <br />
+    <span id="IconField" class="fa fa-pen"></span><label id="LabelField">Statue</label><br />
+    <select name="Statue" id="DDLStatue"><option selected>Select Statue</option><option>Active</option><option>Unavailable</option></select>
+
+  
+    <br />
+
+    @if (ViewBag.ErrorInSaving != "OK")
+    {
+        <label class="text-danger">@ViewBag.ErrorInSaving</label>
+    }
+
+    <br />
+    <br />
+    <button id="ChangePassword" type="button" data-toggle="modal" data-target="#PasswordModal">Change Password</button>
+    <br />
+    <br />
+    <button id="Save" type="submit">Save Changes</button>
+
+    <br />
+    <br />
+    <button id="Delete" data-toggle="modal" data-target="#DeleteModal" type="button">Delete Account</button>
+    <br />
+}
+
+@using (Html.BeginForm("ChangePassword", "Dashboard", FormMethod.Post, new { @id = "ChangePasswordForm" }))
+{
+    <div class="modal fade" id="PasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span id="IconField" class="fa fa-lock"></span><label id="LabelField">Old Password</label>
+                    <br />
+                    <input type="password" style="background-color:#afafaf" placeholder="Current Password" required name="oldPassword" id="InputField" />
+                    <br />
+                    <span id="IconField" class="fa fa-lock"></span><label id="LabelField">New Password</label>
+                    <br />
+                    <input type="password" style="background-color:#afafaf" required placeholder="New Password" name="newPassword" id="InputField" />
+                    <br />
+                    <span id="IconField" class="fa fa-lock"></span><label id="LabelField">Confirm Password</label>
+                    <br />
+                    <input type="password" style="background-color:#afafaf" required placeholder="Confirm Password" name="confirmPassword" id="InputField" />
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+                    <button type="button" id="ChangePasswordModalButton" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@using (Html.BeginForm("DeleteAccount", "Dashboard", FormMethod.Post, new { @id = "DeleteAccount" }))
+{
+    <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Delete Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label>Are you sure ?</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Keep it</button>
+                    <button type="button" id="ChangePasswordModalButton" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

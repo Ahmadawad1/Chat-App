@@ -1,0 +1,12 @@
+C:\Users\lenovo\source\repos\StudentPortal\BAL\bin\Debug\netcoreapp3.1\BAL.deps.json
+C:\Users\lenovo\source\repos\StudentPortal\BAL\bin\Debug\netcoreapp3.1\BAL.dll
+C:\Users\lenovo\source\repos\StudentPortal\BAL\bin\Debug\netcoreapp3.1\BAL.pdb
+C:\Users\lenovo\source\repos\StudentPortal\BAL\obj\Debug\netcoreapp3.1\BAL.csprojAssemblyReference.cache
+C:\Users\lenovo\source\repos\StudentPortal\BAL\obj\Debug\netcoreapp3.1\BAL.AssemblyInfoInputs.cache
+C:\Users\lenovo\source\repos\StudentPortal\BAL\obj\Debug\netcoreapp3.1\BAL.AssemblyInfo.cs
+C:\Users\lenovo\source\repos\StudentPortal\BAL\obj\Debug\netcoreapp3.1\BAL.dll
+C:\Users\lenovo\source\repos\StudentPortal\BAL\obj\Debug\netcoreapp3.1\BAL.pdb
+C:\Users\lenovo\source\repos\StudentPortal\BAL\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\lenovo\source\repos\StudentPortal\BAL\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\lenovo\source\repos\StudentPortal\BAL\obj\Debug\netcoreapp3.1\BAL.csproj.CopyComplete
+C:\Users\lenovo\source\repos\StudentPortal\BAL\obj\Debug\netcoreapp3.1\BAL.csproj.CoreCompileInputs.cache

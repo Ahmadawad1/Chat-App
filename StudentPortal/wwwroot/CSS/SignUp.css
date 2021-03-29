@@ -1,0 +1,138 @@
+﻿#bgImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #36404a
+}
+
+input:focus, button:focus {
+    outline: none
+}
+#abchat{
+    margin-left:45%;
+    top:9%;
+    position:absolute;
+}
+
+#container {
+    display: inline-flex;
+    flex-direction: row;
+    z-index: 3;
+    position: absolute;
+    padding: 10px;
+    margin-left: 35%;
+    top: 20%;
+    font-family: "Public Sans",sans-serif;
+    border-radius: 10px;
+    background-color: #262e35
+}
+
+label {
+    font-size: 15px;
+    color: #ef476f;
+    font-weight: bold
+}
+
+#form {
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+#icon {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 40px;
+    background-color: #505961;
+    color: #895d3f;
+    border: hidden;
+    padding: 5px;
+    border-right: 1px #bfbdbd solid;
+    max-height: 40px
+}
+
+#IconPlusText {
+    height: 40px;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+#form .error {
+    color: #ef476f;
+    font-weight: bolder
+}
+
+input {
+    background-color: #505961;
+    height: 40px;
+    width: 320px;
+    border: hidden;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    min-height: 40px;
+    color:white
+}
+
+button {
+    height: 40px;
+    width: 350px;
+    border-radius: 5px;
+    border: hidden;
+    background-color: #505961;
+    color: white;
+    font-weight: bolder;
+    transition: 0.5s ease
+}
+
+    button:hover {
+        background-color: #36414b;
+     
+    }
+
+
+@media screen and (max-width:900px) {
+    #container {
+        margin-left: 20% !important;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #container {
+        margin-left: 5% !important;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #container {
+        margin-left: 0 !important;
+      
+        height: 100% !important;
+        width: 100% !important;
+        top: 0
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    #IconPlusText {
+        width: 100%
+    }
+
+    #container {
+        padding: 0 !important
+    }
+
+    #TextDiv {
+        width: 90% !important
+    }
+
+    input {
+        width: 100% !important
+    }
+
+    button {
+        width: 100% !important
+    }
+}
